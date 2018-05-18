@@ -2,18 +2,9 @@ package com.rexen.rest.util;
 
 /**
  * @author: GavinHacker
- * @description: json格式化工具
- * @modifiedBy:
  */
 public final class JSONFormatUtil {
 
-    /**
-     * @author: GavinHacker
-     * @description: json格式化主方法
-     * @param: String json 未格式化的json
-     * @return: 格式化之后的 json
-     * @modifiedBy:
-     */
     public static String format(String json) {
         if (null == json || "".equals(json)) {
             return "";
@@ -66,11 +57,6 @@ public final class JSONFormatUtil {
         return sb.toString();
     }
 
-    /**
-     * @author: GavinHacker
-     * @description: 辅助方法
-     * @modifiedBy:
-     */
     private static void appendTab(StringBuilder sb, int indent) {
         for (int i = 0; i < indent; i++) {
             sb.append('\t');

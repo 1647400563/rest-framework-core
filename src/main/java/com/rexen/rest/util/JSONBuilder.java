@@ -4,9 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.Map;
 
-/**
- * Created by Peter on 2017/5/6.
- */
 public class JSONBuilder extends JSONObject {
 
     public static JSONBuilder json() {

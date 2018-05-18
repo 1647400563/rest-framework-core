@@ -11,18 +11,10 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface FunctionLog {
-    /**
-     * 模块名称
-     */
+
     String module() default "";
 
-    /**
-     * 操作内容
-     */
     String operation() default "";
 
-    /**
-     * 扩展内容
-     */
     String extension() default "";
 }

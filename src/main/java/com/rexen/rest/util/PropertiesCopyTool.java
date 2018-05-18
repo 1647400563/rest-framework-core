@@ -9,9 +9,6 @@ import java.util.*;
 
 /**
  * @author: GavinHacker
- * @description: 用于不同结构对象拷贝
- * @date: Created in 下午3:59 18/3/9
- * @modifiedBy:
  */
 public class PropertiesCopyTool {
 
