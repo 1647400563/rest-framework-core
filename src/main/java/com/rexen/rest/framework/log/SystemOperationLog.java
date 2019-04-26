@@ -11,7 +11,6 @@ import java.util.Date;
  * @author GavinHacker
  * @since 2018-03-02
  */
-
 public class SystemOperationLog implements Serializable {
 
     private static final long serialVersionUID = 1L;

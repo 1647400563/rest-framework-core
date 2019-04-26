@@ -23,9 +23,10 @@ import java.util.UUID;
  * @description:
  * @date: Created in 上午10:05 18/5/21
  * @modifiedBy:
+ * @deprecated 废弃，使用框架本身的日志记录拦截
  */
-@Component
-@Aspect
+//@Component
+//@Aspec
 public class FunctionLogCapturer {
 
     Logger logger = Logger.getLogger(FunctionLogCapturer.class);
