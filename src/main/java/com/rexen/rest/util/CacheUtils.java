@@ -15,15 +15,44 @@ public class CacheUtils {
 
     public static final String special_suffix = "__]";
 
-    private volatile static Cache<String, String> cache = null;
+    private volatile static Cache<String, Object> cache = null;
 
-    public static Cache<String, String> instance(){
+    public static Cache<String, Object> instance(int initialCapacity, int concurrencyLevel, int expireDuration){
+        if(cache == null) {
+            cache = CacheBuilder.newBuilder()
+                    .initialCapacity(initialCapacity)
+                    .concurrencyLevel(concurrencyLevel)
+                    .expireAfterWrite(expireDuration, TimeUnit.SECONDS)
+                    .build();
+        }
+        return cache;
+    }
+
+    public static Cache<String, Object> instance(int expireDuration){
+        if(cache == null) {
+            cache = CacheBuilder.newBuilder()
+                    .initialCapacity(20)
+                    .concurrencyLevel(10)
+                    .expireAfterWrite(expireDuration, TimeUnit.SECONDS)
+                    .build();
+        }
+        return cache;
+    }
+
+    public static Cache<String, Object> instance(){
         if(cache == null) {
             cache = CacheBuilder.newBuilder()
                     .initialCapacity(20)
                     .concurrencyLevel(10)
                     .expireAfterWrite(20, TimeUnit.SECONDS)
                     .build();
+        }
+        return cache;
+    }
+
+    public static Cache<String, Object> instance(CacheBuilder<String, Object> cacheBuilder){
+        if(cache == null){
+            cache = cacheBuilder.build();
         }
         return cache;
     }
@@ -48,7 +77,7 @@ public class CacheUtils {
     }
 
     public static void main(String[] args) throws ExecutionException {
-        String x = wrapKey("GavinHacker");
+        String x = wrapKey("Gavin");
         String y = unwrapKey(x);
         System.out.println(y);
         String y1 = unwrapKey("abc");

@@ -84,6 +84,11 @@
       <version>1.0.29</version>
       <scope>provided</scope>
     </dependency>
+      <dependency>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+          <version>2.10.4</version>
+      </dependency>
   </dependencies>
 
   <build>
